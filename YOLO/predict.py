@@ -1,27 +1,16 @@
 from ultralytics import YOLO
 
-# 1. 加载预训练 YOLO 检测模型
-model = YOLO("yolo11n.pt")
 
-# 2. 对图片做预测
-# classes=[0] 表示只检测 person
-results = model.predict(
-    source="pytorch/YOLO/eva08_a.jpg",
-    classes=[0],
-    conf=0.25,
-    save=True
-)
+def main():
+    model = YOLO("/home/quyi/practice/pytorch/YOLO/runs/detect/character_yolo-2/weights/best.pt")
 
-# 3. 打印检测结果
-for result in results:
-    boxes = result.boxes
+    model.predict(
+        source="bili_opus_images",
+        conf=0.4,
+        save=True,
+        name="character_predict"
+    )
 
-    for box in boxes:
-        cls_id = int(box.cls[0])
-        conf = float(box.conf[0])
-        xyxy = box.xyxy[0].tolist()
 
-        print("class id:", cls_id)
-        print("confidence:", conf)
-        print("box xyxy:", xyxy)
-        print("-" * 30)
+if __name__ == "__main__":
+    main()
