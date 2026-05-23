@@ -4,10 +4,10 @@ from ultralytics import YOLO
 def main():
 
 
-    model = YOLO("runs/detect/character_yolo-3/weights/best.pt")
+    model = YOLO("runs/detect/character_yolo/weights/best.pt")
     model.train(
             data="data.yaml",
-            epochs=40,
+            epochs=10,
             imgsz=640,
             batch=4,
             name="character_yolo"

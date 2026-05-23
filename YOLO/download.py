@@ -7,7 +7,7 @@ from urllib.parse import unquote
 import requests
 
 
-PAGE_URL = "https://www.bilibili.com/opus/451041166030261533?from=search&spm_id_from=333.337.0.0"
+PAGE_URL = "https://www.bilibili.com/opus/712718559875170305?from=search&spm_id_from=333.337.0.0"
 
 OUT_DIR = Path("bili_opus_images")
 OUT_DIR.mkdir(exist_ok=True)
