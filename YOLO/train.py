@@ -7,7 +7,7 @@ def main():
     model = YOLO("runs/detect/character_yolo/weights/best.pt")
     model.train(
             data="data.yaml",
-            epochs=10,
+            epochs=25,
             imgsz=640,
             batch=4,
             name="character_yolo"
